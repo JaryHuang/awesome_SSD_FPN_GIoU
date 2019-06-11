@@ -51,13 +51,13 @@ The fold structure as follow:
 - python3+
 - visdom 
 	- for real-time loss visualization during training!
-```Shell
-pip install visdom
-```
+	```Shell
+	pip install visdom
+	```
 	- Start the server (probably in a screen or tmux)
-```Shell
-python visdom
-```
+	```Shell
+	python visdom
+	```
   * Then (during training) navigate to http://localhost:8097/ (see the Train section below for training details).
 
 
@@ -101,6 +101,7 @@ python tools/train.py
 python eval.py --trained_model your_weight_address
 ```
 
+
 ## Test
 - To test a trained network:
 
@@ -109,9 +110,10 @@ python test.py -- trained_model your_weight_address
 ```
 if you want to visual the box, you can add the command --visbox True(default False)
 
+
 ## Performance
 
-### VOC2007 Test mAP
+#### VOC2007 Test mAP
 - Backbone is the ResNet50:
 
 | Test |mAP(iou=0.5)|mAP(iou=0.6)|mAP(iou=0.75)|
@@ -121,19 +123,20 @@ if you want to visual the box, you can add the command --visbox True(default Fal
 | SSD+FPN | 78.99% | 73.18% | 55.19 % |
 | SSD+FPN+Gious | 78.96% | 73.35% | 55.83 % |
 
-![result](./work_dir/result.png)
+![result](https://github.com/JaryHuang/SSD_FPN_GIoU/blob/master/work_dir/result.png)
 
-### FPS
+#### FPS
 - SSD+FPN+Gious:
 **GTX 1080ti:** ~35 FPS
 
-### Download a pre-trained network
+#### Download a pre-trained network
 - Currently, we provide the following PyTorch models:
-    * SSD300 trained on VOC0712 (newest PyTorch SSD+FPN+Gious weights)[Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/1Z4oYk0ni_Tocj8xJzglzFA),passward:32wv
+    * SSD300 trained on VOC0712 (newest PyTorch SSD+FPN+Gious weights) [Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/1Z4oYk0ni_Tocj8xJzglzFA) , passward:32wv
 
 
 ## Authors
 * [**JavierHuang**](https://github.com/JaryHuang)
+
 
 ## References
 - [SSD: Single Shot MultiBox Detector](http://arxiv.org/abs/1512.02325)
