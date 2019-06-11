@@ -140,7 +140,7 @@ def train():
     criterion = MultiBoxLoss(cfg = cfg,overlap_thresh = 0.5, 
                             prior_for_matching = True,bkg_label = 0, 
                             neg_mining = True, neg_pos = 3,neg_overlap = 0.5,
-                            encode_target = False, use_gpu = args.cuda,loss_name = 'SmoothL1')
+                            encode_target = False, use_gpu = args.cuda,loss_name = 'Giou')
     
     if args.visdom:
         import visdom
