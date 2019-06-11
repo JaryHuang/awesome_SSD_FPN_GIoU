@@ -50,12 +50,12 @@ The fold structure as follow:
 - pytorch 0.4.1
 - python3+
 - visdom 
-for real-time loss visualization during training!
-  ```Shell
-  pip install visdom
-Start the server (probably in a screen or tmux)
-  python visdom
-  ```
+	- for real-time loss visualization during training!
+```Shell
+pip install visdom
+	- Start the server (probably in a screen or tmux)
+python visdom
+```
   * Then (during training) navigate to http://localhost:8097/ (see the Train section below for training details).
 
 
@@ -68,7 +68,7 @@ Start the server (probably in a screen or tmux)
 ### Training VOC
 - The pretrained model refer [pretrained-models.pytorch](https://github.com/Cadene/pretrained-models.pytorch),you can download the model.
 
--in the SSD_FPN_GIoU fold:
+- In the SSD_FPN_GIoU fold:
 ```Shell
 python tools/train.py
 ```
@@ -86,7 +86,7 @@ python tools/train.py
 3. change the config/ config.py, and make your dataset config,like CRACK(dict{})
 4. In the main,load your dataset.
 
-- in the SSD_FPN_GIoU fold:
+- In the SSD_FPN_GIoU fold:
 ```Shell
 python tools/train.py
 ```
@@ -96,21 +96,22 @@ python tools/train.py
 - To evaluate a trained network:
 
 ```Shell
-python eval.py --trained_model **your weight add**
+python eval.py --trained_model your_weight_address
 ```
 
 ## Test
 - To test a trained network:
 
 ```Shell
-python test.py -- trained_model **your weight add**
+python test.py -- trained_model your_weight_address
 ```
 if you want to visual the box, you can add the command --visbox True(default False)
 
 ## Performance
 
 ### VOC2007 Test mAP
-- Backbone is the ResNet50
+- Backbone is the ResNet50:
+
 | Test |mAP(iou=0.5)|mAP(iou=0.6)|mAP(iou=0.75)|
 |:-:|:-:|:-:|:-:|
 | SSD | 75.49% | 70.87% | 53.44 % |
@@ -118,7 +119,7 @@ if you want to visual the box, you can add the command --visbox True(default Fal
 | SSD+FPN | 78.99% | 73.18% | 55.19 % |
 | SSD+FPN+Gious | 78.96% | 73.35% | 55.83 % |
 
-![result](work_dir/result.png)
+![result](./work_dir/result.png)
 
 ### FPS
 - SSD+FPN+Gious:
@@ -127,7 +128,8 @@ if you want to visual the box, you can add the command --visbox True(default Fal
 ### Download a pre-trained network
 - Currently, we provide the following PyTorch models:
     * SSD300 trained on VOC0712 (newest PyTorch SSD+FPN+Gious weights)
-	- [Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/1Z4oYk0ni_Tocj8xJzglzFA) , **passward:**32wv
+	- [Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/1Z4oYk0ni_Tocj8xJzglzFA),
+**passward:**32wv
 
 
 ## Authors
