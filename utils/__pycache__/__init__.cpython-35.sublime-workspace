@@ -1,0 +1,1151 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"set",
+				"set_type\tstatement"
+			],
+			[
+				"eval",
+				"eval_type\tparam"
+			],
+			[
+				"all",
+				"all_boxes\tstatement"
+			],
+			[
+				"clas",
+				"classname\tparam"
+			],
+			[
+				"loss",
+				"loss_l\tstatement"
+			],
+			[
+				"area",
+				"area2\tstatement"
+			],
+			[
+				"ten",
+				"Tensor\tclass"
+			],
+			[
+				"tensor",
+				"tensor"
+			],
+			[
+				"loc",
+				"loc_t\tstatement"
+			],
+			[
+				"pri",
+				"priors\tstatement"
+			],
+			[
+				"b",
+				"bbox_overlaps_gious\tmodule"
+			],
+			[
+				"box",
+				"boxes2\tstatement"
+			],
+			[
+				"g",
+				"GiouLoss\tclass"
+			],
+			[
+				"num",
+				"num_pos\tstatement"
+			],
+			[
+				"match",
+				"match_gious\tfunction"
+			],
+			[
+				"mat",
+				"match_gious\tfunction"
+			],
+			[
+				"per",
+				"permute"
+			],
+			[
+				"Voc",
+				"VOC_CLASSES\tinstance"
+			],
+			[
+				"model",
+				"model_name\tparam"
+			],
+			[
+				"out",
+				"out_channels"
+			],
+			[
+				"mode",
+				"model_length"
+			],
+			[
+				"mo",
+				"model\tstatement"
+			],
+			[
+				"exts",
+				"exts3_1\tstatement"
+			],
+			[
+				"modu",
+				"ModuleList\tclass"
+			],
+			[
+				"con",
+				"Conv2d\tclass"
+			],
+			[
+				"data",
+				"dataset\tstatement"
+			],
+			[
+				"i",
+				"i\tstatement"
+			],
+			[
+				"input",
+				"inputs\tparam"
+			],
+			[
+				"x",
+				"xavier_uniform\tstatement"
+			],
+			[
+				"in",
+				"init_weights\tfunction"
+			],
+			[
+				"Mu",
+				"MultiBoxLoss"
+			],
+			[
+				"la",
+				"laterals\tstatement"
+			],
+			[
+				"dete",
+				"Detect"
+			],
+			[
+				"p",
+				"PriorBox\tclass"
+			],
+			[
+				"P",
+				"PriorBox"
+			],
+			[
+				"pr",
+				"prior_box\tmodule"
+			],
+			[
+				"with",
+				"with_norm\tstatement"
+			],
+			[
+				"buil",
+				"build_ssd\tmodule"
+			],
+			[
+				"c",
+				"ConvModule\tclass"
+			],
+			[
+				"v",
+				"voc\tmodule"
+			],
+			[
+				"SS",
+				"SSDHead\tclass"
+			],
+			[
+				"base",
+				"base_feature\tstatement"
+			],
+			[
+				"fea",
+				"feature_map_out\tstatement"
+			],
+			[
+				"ne",
+				"build_neck\tmodule"
+			],
+			[
+				"ex",
+				"Exception\tclass"
+			],
+			[
+				"bu",
+				"build_backbone\tmodule"
+			],
+			[
+				"is",
+				"issubset\tfunction"
+			],
+			[
+				"pre",
+				"pretrained\tparam"
+			],
+			[
+				"dataset",
+				"dataset_root"
+			],
+			[
+				"VOC",
+				"VOC_ROOT\tinstance"
+			],
+			[
+				"SSD",
+				"SSD_Eval_Augmentation\tclass"
+			],
+			[
+				"au",
+				"augmentations\tmodule"
+			],
+			[
+				"gt",
+				"gt_bboxes\tstatement"
+			],
+			[
+				"ras",
+				"raise\tkeyword"
+			],
+			[
+				"Cra",
+				"CRACKDetection\tclass"
+			],
+			[
+				"Cr",
+				"CRACK_ROOT\tstatement"
+			],
+			[
+				"voc",
+				"VOCDetection\tclass"
+			],
+			[
+				"vo",
+				"VOC\tmodule"
+			],
+			[
+				"Tr",
+				"True\tkeyword"
+			],
+			[
+				"Tra",
+				"TRAFIC_CLASSES\tinstance"
+			],
+			[
+				"tra",
+				"TRAFICDetection\tclass"
+			],
+			[
+				"TRA",
+				"TRAFIC_ROOT\tinstance"
+			],
+			[
+				"anc",
+				"anchor_list\tstatement"
+			],
+			[
+				"nu",
+				"num_ins\tstatement"
+			],
+			[
+				"wat",
+				"waitKey\tfunction"
+			],
+			[
+				"sco",
+				"Score_precision"
+			],
+			[
+				"sc",
+				"Score_recall"
+			],
+			[
+				"wi",
+				"write\tfunction"
+			],
+			[
+				"wri",
+				"write\tfunction"
+			],
+			[
+				"wr",
+				"write\tfunction"
+			],
+			[
+				"image",
+				"img_names\tstatement"
+			],
+			[
+				"spl",
+				"splitext\tfunction"
+			],
+			[
+				"src",
+				"src_xml_dir\tstatement"
+			],
+			[
+				"sq",
+				"sqrt\tinstance"
+			],
+			[
+				"cra",
+				"Crack\tclass"
+			],
+			[
+				"get",
+				"get_dataset\tfunction"
+			],
+			[
+				"val",
+				"val_dataset\tstatement"
+			],
+			[
+				"ro",
+				"roi_crop\tmodule"
+			],
+			[
+				"im",
+				"imdb"
+			],
+			[
+				"mask",
+				"masked_select\tfunction"
+			],
+			[
+				"ima",
+				"img_label"
+			],
+			[
+				"file",
+				"filename\tstatement"
+			],
+			[
+				"fir",
+				"first_img\tstatement"
+			],
+			[
+				"fri",
+				"first_img\tstatement"
+			],
+			[
+				"E",
+				"Exception\tclass"
+			],
+			[
+				"sec",
+				"second_img\tstatement"
+			],
+			[
+				"img",
+				"img_two\tstatement"
+			],
+			[
+				"add",
+				"addWeighted\tfunction"
+			],
+			[
+				"wa",
+				"waitKey\tfunction"
+			],
+			[
+				"conf",
+				"conf_t\tstatement"
+			],
+			[
+				"max",
+				"max_pro\tstatement"
+			],
+			[
+				"cr",
+				"CRACKDetection\tclass"
+			],
+			[
+				"res",
+				"resnet\tparam"
+			],
+			[
+				"pos",
+				"pos_idx\tstatement"
+			],
+			[
+				"e",
+				"empty_cache\tfunction"
+			],
+			[
+				"ss",
+				"SSD_Eval_Augmentation\tclass"
+			],
+			[
+				"ssd",
+				"SSD_Eval_Augmentation\tclass"
+			],
+			[
+				"class",
+				"class_to_ind\tparam"
+			],
+			[
+				"CAR",
+				"CRACK_ROOT\tinstance"
+			],
+			[
+				"root",
+				"rootpath\tstatement"
+			],
+			[
+				"CRAC",
+				"CRACK_ROOT"
+			],
+			[
+				"re",
+				"reduction\tparam"
+			],
+			[
+				"pic",
+				"pic_size"
+			],
+			[
+				"f",
+				"functional\tmodule"
+			],
+			[
+				"load",
+				"load_model_path"
+			],
+			[
+				"INPUT",
+				"input_IMG\tstatement"
+			],
+			[
+				"r",
+				"r"
+			],
+			[
+				"triph",
+				"triphard-rate"
+			],
+			[
+				"trip",
+				"TripHardLoss\tclass"
+			],
+			[
+				"ide",
+				"ide_face\tstatement"
+			],
+			[
+				"best",
+				"best_threshold_index"
+			],
+			[
+				"cv",
+				"cvtColor\tfunction"
+			],
+			[
+				"COLOR_B",
+				"COLOR_BGR2GRAY\tinstance"
+			],
+			[
+				"epo",
+				"epoch_acc\tstatement"
+			],
+			[
+				"Mys",
+				"Myseresnext50_32x4d\tclass"
+			],
+			[
+				"ince",
+				"inception_v3\tfunction"
+			],
+			[
+				"lr",
+				"lr_find\tstatement"
+			],
+			[
+				"plot",
+				"plot_lr\tfunction"
+			],
+			[
+				"optimizer",
+				"optimizer\tparam"
+			],
+			[
+				"ran",
+				"randint\tfunction"
+			],
+			[
+				"torchv",
+				"torchvision\tmodule"
+			],
+			[
+				"bat",
+				"batch_size\tstatement"
+			],
+			[
+				"tes",
+				"test_data\tstatement"
+			],
+			[
+				"da",
+				"data_aug\tmodule"
+			],
+			[
+				"tans",
+				"data_transforms"
+			],
+			[
+				"fo",
+				"FocalLoss\tclass"
+			],
+			[
+				"result",
+				"result_list"
+			],
+			[
+				"str",
+				"str_result\tstatement"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/tools/train.py",
+			"settings":
+			{
+				"buffer_size": 10125,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/VOC.py",
+			"settings":
+			{
+				"buffer_size": 7310,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/config/config.py",
+			"settings":
+			{
+				"buffer_size": 3019,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/tools/eval.py",
+			"settings":
+			{
+				"buffer_size": 15766,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 92.0,
+		"last_filter": "Package Control: install",
+		"selected_items":
+		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/box/box_utils.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/utils/augmentations.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/loss/multibox_loss.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/tools/test.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/test.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/VOC.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/eval.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/tools/eval.py",
+		"/home/hzw/MachineLearning/DeepLearning/test.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/config/config.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/tools/train.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/build_ssd.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/head/build_head.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/detection/detection.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/box/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/ssd.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/train.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/backbone/build_backbone.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/utils/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/data/voc0712.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/pascal_voc/ssd300_voc.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/data/config.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/utils/conv_module.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/neck/build_neck.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/neck/ssd_neck.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/loss/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/neck/build_neck (copy).py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/Rail defect detection_submit/main.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/utils/conv_module.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/utils/weight_init.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/box/prior_box.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/prior_box/prior_box.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/utils/prior_box/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/backbone/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/head/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/utils/norm.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/pascal_voc/faster_rcnn_r50_fpn_1x_voc0712.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/anchor_heads/ssd_head.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/necks/fpn.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/builder.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/utils/norm.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/CRACK.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/model/ssd.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/voc.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/xml_style.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/config/__init__.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/detectors/two_stage.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/tools/test_trafic.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/detectors/cascade_rcnn.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/custom.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/bbox_heads/bbox_head.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/anchor_heads/rpn_head.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/faster_rcnn_r101_fpn_1x_trafic.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/cascade_rcnn_r101_fpn_1x_trafic.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/anchor_heads/anchor_head.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/transforms.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/detectors/rpn.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/anchor/anchor_target.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/detectors/base.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/detectors/faster_rcnn.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/loss/losses.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/apis/train.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/loader/sampler.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/trafic_signal.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/loader/build_loader.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/bbox/transforms.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/bbox/bbox_target.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/data/Traffic-Sign/csv2xml.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/data/Traffic-Sign/createVOC.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/mmdet/apis/train.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/tools/train.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/voc0712.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/layers/functions/detection.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/utils/augmentations.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/simple-faster-rcnn-pytorch-master/data/voc_dataset.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/utils/eval_tool.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/simple-faster-rcnn-pytorch-master/train.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/simple-faster-rcnn-pytorch-master/model/utils/bbox_tools.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/layers/functions/prior_box.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/layers/modules/multibox_loss.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD_Pytorch/data/__init__.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/Rail defect detection_submit/config.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/Rail defect detection_submit/models/BasicModule.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/data/Traffic-Sign/Traiffic-Sign0510/k-means_Anchor.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/faster_rcnn_r50_fpn_1x_trafic.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/cascade_rcnn_r50_fpn_1x_trafic.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/data/show_anno.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/faster_rcnn_ohem_r50_fpn_1x.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/anchor/anchor_generator.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/cascade_rcnn_r50_fpn_1x.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/roi_extractors/single_level.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/registry.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/models/backbones/resnet.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/data/Traffic-Sign/Traiffic-Sign0510/createVOC.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/utils.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/tools/voc_eval.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/evaluation/mean_ap.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/cascade_rcnn_r101_fpn_1x.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/faster_rcnn_x101_64x4d_fpn_1x_trafic.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/faster_rcnn_r101_fpn_1x.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/trafic/faster_rcnn_x101_64x4d_fpn_1x.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/pascal_voc/faster_rcnn_r50_fpn_1x_trafic.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/tools/test _trafic.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/pascal_voc/faster_rcnn_r50_fpn_1x_voc0712 (copy).py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/tools/test.py",
+		"/home/hzw/MachineLearning/DeepLearning/work/tk/tk_windows.py",
+		"/media/hzw/Seagate Expansion Drive/研究生/DeepLearning/项目/work/tk/tk_windows.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/configs/pascal_voc/faster_rcnn_r50_fpn_1x_crack.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/__init__.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/trafic-signal.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/evaluation/__init__.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/evaluation/class_names.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/setup.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/core/evaluation/coco_utils.py",
+		"/usr/local/lib/python3.5/dist-packages/mmdet-0.5.7+head-py3.5.egg/mmdet/datasets/crack.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/compile.sh",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/mmdet/models/builder.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/tools/just_do_test.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/mmdet/datasets/utils.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/build/lib/mmdet/datasets/utils.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/mmdetection/build/lib/mmdet/models/builder.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/fpn.pytorch/lib/datasets/vg.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/fpn.pytorch/lib/datasets/pascal_voc.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/fpn.pytorch/lib/pycocotools/mask.py",
+		"/home/hzw/MachineLearning/DeepLearning/ObjectDetection/fpn.pytorch/lib/datasets/imagenet.py"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"devkit_path",
+			"transform",
+			"cachedir",
+			"save_folder",
+			"output_dir",
+			"dataset_mean",
+			"annopath",
+			"print",
+			"output_dir",
+			"type",
+			"BaseTransform",
+			"labelmap",
+			"cls",
+			"000005",
+			"match",
+			"jaccard",
+			"intersect",
+			"net",
+			"ssd_net",
+			"Detect",
+			"transform",
+			"BaseTransform",
+			"means",
+			"self.softmax",
+			"epoch_size",
+			"self.negpos_ratio",
+			"num_classes",
+			"normalize",
+			"print",
+			"loc_loss",
+			"print",
+			"decoded_boxes",
+			"nms",
+			"cfg",
+			"cls_out_channels",
+			"out_map",
+			"xavier_init",
+			"input_size",
+			"normalize",
+			"norm_layer",
+			"normalize",
+			"ConvModule",
+			"self.modules()",
+			"image_transform",
+			"detection_collate",
+			"voc",
+			"osp",
+			"Standform",
+			"SubtractMeans",
+			"RandomMirror",
+			"print",
+			"rpn_head",
+			"DC",
+			"BboxTransform",
+			"img_infos",
+			"get",
+			"image_transform",
+			"transform",
+			"image_transform",
+			"eq",
+			"osp",
+			"torch",
+			"flip",
+			"det_file",
+			"resnet",
+			"lr",
+			"trafic",
+			"print",
+			"im_detect",
+			"print",
+			"pre_acc",
+			"max_pre_acc",
+			"set_type",
+			"imgsetpath",
+			"voc_eval",
+			"voc_eval,",
+			"imagesetfile,",
+			"voc_eval",
+			"set_type",
+			"labelmap",
+			"voc_eval",
+			"set_type",
+			"BaseTransform",
+			"dataset_mean",
+			"labelmap",
+			"filename",
+			"Detect",
+			"CRACK_CLASSES",
+			"flip",
+			"print",
+			"anchor_target",
+			"sampling",
+			"multi_apply",
+			"print",
+			"anchor_generators",
+			"anchor_target",
+			"img_meta",
+			"train_cfg",
+			"self.train_cfg",
+			"featmap_strides",
+			"in_channels",
+			"args.validate",
+			"sample",
+			"group",
+			"validate",
+			"cfg",
+			"flip",
+			"flip_ratio",
+			"box",
+			"results2json",
+			"det2json",
+			"dataset",
+			"cPickle",
+			"print",
+			"cPickle",
+			"print",
+			"best_map",
+			"self.feat_stride",
+			"anchor",
+			"text",
+			"generate_anchor_base",
+			"print",
+			"create_vis_plot",
+			"max_pre_acc",
+			"pull_anno",
+			"pull_image",
+			"labels",
+			"targets"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"pickle",
+			"np",
+			"\t"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/tools/train.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8073,
+								8073
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4608.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/data/VOC.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3638,
+								3638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1872.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/config/config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3019,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								981,
+								981
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 144.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/hzw/MachineLearning/DeepLearning/ObjectDetection/SSD/tools/eval.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5972,
+								5972
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3900.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 154.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 154.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "__init__.cpython-35.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/MachineLearning/DeepLearning/classfication/VggNet/VggNet.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
