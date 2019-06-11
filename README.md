@@ -46,27 +46,29 @@ The fold structure as follow:
 - work_dir/
 	
 
-## environment
+## Environment
 - pytorch 0.4.1
 - python3+
 - visdom 
 	- for real-time loss visualization during training!
 ```Shell
 pip install visdom
+```
 	- Start the server (probably in a screen or tmux)
+```Shell
 python visdom
 ```
   * Then (during training) navigate to http://localhost:8097/ (see the Train section below for training details).
 
 
 ## Datasets
-- PASCAL VOC:To make the dataset, now you can download the voc 07+12, can take the VOCdevkit in the data/
+- PASCAL VOC:Download VOC2007, VOC2012 dataset, then put VOCdevkit in the data directory
 
 
 ## Training
 
 ### Training VOC
-- The pretrained model refer [pretrained-models.pytorch](https://github.com/Cadene/pretrained-models.pytorch),you can download the model.
+- The pretrained model refer [pretrained-models.pytorch](https://github.com/Cadene/pretrained-models.pytorch),you can download it.
 
 - In the SSD_FPN_GIoU fold:
 ```Shell
@@ -137,8 +139,10 @@ if you want to visual the box, you can add the command --visbox True(default Fal
 
 ## References
 - [SSD: Single Shot MultiBox Detector](http://arxiv.org/abs/1512.02325)
-- [SSD: Single Shot MultiBox Object Detector, in PyTorch](https://github.com/amdegroot/ssd.pytorch)
-- [mmdet](https://github.com/open-mmlab/mmdetection)
 - [Feature Pyramid Networks for Object Detection](https://arxiv.org/abs/1612.03144)
 - [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002)
 - [Generalized Intersection over Union](https://arxiv.org/abs/1902.09630)
+- [SSD: Single Shot MultiBox Object Detector, in PyTorch](https://github.com/amdegroot/ssd.pytorch)
+- [mmdet](https://github.com/open-mmlab/mmdetection)
+- [pretrained-models.pytorch](https://github.com/Cadene/pretrained-models.pytorch)
+
