@@ -15,8 +15,6 @@ class Backbone(nn.Module):
         self.model = self.add_extras(lay, channal)
         self.model_length = len(self.model)
         self.feature_map = feature_map
-        
-        print(self.model_length)
 
 
 
@@ -74,7 +72,7 @@ class Backbone(nn.Module):
             x = self.model[i](x)
             
             if i+1 in self.feature_map:
-                #print(x.shape)
+              
                 outs.append(x)
         #for i in range(len(outs)):
             #print(outs[i].shape[1])
@@ -88,14 +86,12 @@ class Backbone(nn.Module):
 if __name__=='__main__':
     import torch.nn as nn
     use_gpu = True
-    #print(pretrainedmodels.model_names)
     model_name = 'resnet50'
 
-    #print(len(model),feature_channel)
+  
      # could be fbresnet152 or inceptionresnetv2
     feature_map = [6,7,8,9,10,11]
     bone_model = Backbone(model_name,feature_map)
-    #print(len(bone_model))
     if use_gpu: 
         bone_model.cuda()
         summary(bone_model, (3,300, 300))

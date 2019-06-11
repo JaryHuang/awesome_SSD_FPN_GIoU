@@ -6,10 +6,7 @@ https://github.com/fmassa/vision/blob/voc_dataset/torchvision/datasets/voc.py
 Updated by: Ellis Brown, Max deGroot
 """
 import os
-import os.path as osp
 import sys
-import torch
-import torch.utils.data as data
 import cv2
 import numpy as np
 if sys.version_info[0] == 2:
@@ -25,8 +22,8 @@ from .VOC import VOCDetection,VOCAnnotationTransform
 CRACK_CLASSES = (  # always index 0
     'neg',)
 
-HOME = osp.join(os.getcwd())
-CRACK_ROOT = osp.join(HOME, "data/Semi-CrackData/")
+HOME = os.path.join(os.getcwd())
+CRACK_ROOT = os.path.join(HOME, "data/CrackData/")
 
 class CRACKDetection(VOCDetection):
     """VOC Detection Dataset Object
@@ -53,11 +50,11 @@ class CRACKDetection(VOCDetection):
         self.transform = transform
         self.bbox = bbox_transform
         self.name = dataset_name
-        self._annopath = osp.join('%s', 'Annotations', '%s.xml')
-        self._imgpath = osp.join('%s', 'JPEGImages', '%s.jpg')
+        self._annopath = os.path.join('%s', 'Annotations', '%s.xml')
+        self._imgpath = os.path.join('%s', 'JPEGImages', '%s.jpg')
         self.ids = list()
-        rootpath = osp.join(self.root, 'crack/')
-        for line in open(osp.join(rootpath, 'ImageSets', 'Main',image_sets)):
+        rootpath = os.path.join(self.root, 'crack/')
+        for line in open(os.path.join(rootpath, 'ImageSets', 'Main',image_sets)):
             self.ids.append((rootpath, line.strip()))
         #self.ids = self.ids[0:20]
 
@@ -66,10 +63,8 @@ class CRACKDetection(VOCDetection):
         fir_id = self.ids[fir_index]
         sec_index = np.random.randint(0,len(self.ids))
         sec_id = self.ids[sec_index]
-        #print(fir_index)
         first_img = cv2.imread(self._imgpath % fir_id)
         second_img = cv2.imread(self._imgpath % sec_id)
-        #print(eq(first_img.shape,second_img.shape))
         if eq(first_img.shape,second_img.shape) is False:
             raise Exception("The image shape is not same, please!,the first img is {},shape = {},\
                 the second is {},shape = {}".format(fir_index,str(first_img.shape),sec_index,str(second_img.shape)))
@@ -91,7 +86,6 @@ class CRACKDetection(VOCDetection):
             target = self.target_transform(first_target, width, height)
         else:
             target = self.target_transform(second_target, width, height)
-        #print(lam,target)
         return res,target,height,width
     
 

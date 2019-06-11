@@ -1,11 +1,9 @@
 import os
 import sys
 sys.path.append(os.getcwd())
-#sys.path.append(os.path.dirname(os.getcwd()))
-#print(sys.path)
 from model import build_ssd
 from data import *
-from config import crack,voc,coco,trafic
+from config import crack,voc
 from utils import MultiBoxLoss
 
 
@@ -117,7 +115,7 @@ def train():
                                   pin_memory=True)
 
     #build, load,  the net 
-    ssd_net = build_ssd('train',size = 300,cfg = voc)
+    ssd_net = build_ssd('train',size = cfg['min_dim'],cfg = cfg)
     '''
     for name,param in ssd_net.named_parameters():
         if param.requires_grad:
@@ -171,7 +169,7 @@ def train():
 
             # load train data
             images, targets = batch_iterator
-            #print(targets)
+            #print(images,targets)
             if args.cuda:
                 images = images.cuda()
                 targets = [ann.cuda() for ann in targets]

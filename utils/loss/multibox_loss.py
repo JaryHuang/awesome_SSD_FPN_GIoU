@@ -38,9 +38,7 @@ class FocalLoss(nn.Module):
     def forward(self, inputs, targets):
         N = inputs.size(0)
         C = inputs.size(1)
-        #print(N,C)
         P = F.softmax(inputs,dim= 1)
-        #print(P)
         class_mask = inputs.data.new(N, C).fill_(0)
         class_mask = Variable(class_mask)
         ids = targets.view(-1, 1)
@@ -53,7 +51,6 @@ class FocalLoss(nn.Module):
         probs = (P*class_mask).sum(1).view(-1,1)
 
         log_p = probs.log()
-        #print('probs size= {}'.format(probs.size()))
 
         batch_loss = -alpha*(torch.pow((1-probs), self.gamma))*log_p 
 
@@ -97,9 +94,9 @@ class GiouLoss(nn.Module):
             decoded_boxes = loc_p
         #loss = torch.tensor([1.0])
         gious =1.0 - bbox_overlaps_giou(decoded_boxes,loc_t)
-        #print(gious)
+        
         loss = torch.sum(gious)
-        #print(loss)
+     
         if self.size_sum:
             loss = loss
         else:
@@ -167,7 +164,6 @@ class MultiBoxLoss(nn.Module):
                 shape: [batch_size,num_objs,5] (last idx is the label).
         """
         loc_data, conf_data, priors = predictions
-        #print(loc_data.shape,conf_data.shape,priors.shape)
         num = loc_data.size(0)
        
         priors = priors[:loc_data.size(1), :]
@@ -225,12 +221,9 @@ class MultiBoxLoss(nn.Module):
 
         # Confidence Loss Including Positive and Negative Examples
         pos_idx = pos.unsqueeze(2).expand_as(conf_data)
-        #print(pos_idx)
         neg_idx = neg.unsqueeze(2).expand_as(conf_data)
         conf_p = conf_data[(pos_idx+neg_idx).gt(0)].view(-1, self.num_classes)
-        #print(conf_p)
         targets_weighted = conf_t[(pos+neg).gt(0)]
-        #print(targets_weighted)
         loss_c = F.cross_entropy(conf_p, targets_weighted, reduction='sum')
 
         # Sum of losses: L(x,c,l,g) = (Lconf(x, c) + αLloc(x,l,g)) / N
