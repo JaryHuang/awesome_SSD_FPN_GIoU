@@ -123,7 +123,7 @@ if you want to visual the box, you can add the command --visbox True(default Fal
 | SSD+FPN | 78.99% | 73.18% | 55.19 % |
 | SSD+FPN+Gious | 78.96% | 73.35% | 55.83 % |
 
-![result](https://github.com/JaryHuang/SSD_FPN_GIoU/blob/master/work_dir/result.jpg)
+![result](https://github.com/JaryHuang/SSD_FPN_GIoU/blob/master/work_dir/result.png)
 
 #### FPS
 - SSD+FPN+Gious:
