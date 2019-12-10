@@ -27,6 +27,7 @@ class PriorBox(object):
 
     def forward(self):
         mean = []
+        # create the prior box[c_x,c_y,w,h]
         for k, f in enumerate(self.feature_maps):
             for i, j in product(range(f), repeat=2):
                 f_k = self.image_size / self.steps[k]

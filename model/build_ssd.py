@@ -114,7 +114,7 @@ def build_ssd(phase, size=300, cfg=None):
         return
     print(phase)
     base = Backbone(cfg['model'],[6,7,8,9,10,11])
-    
+    #neck=None
     neck = Neck(in_channels = cfg['backbone_out'], out_channels = cfg['neck_out'])
     head = SSDHead(num_classes = cfg['num_classes'],in_channels = cfg['neck_out'],aspect_ratios = cfg['aspect_ratios'])
     

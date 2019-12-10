@@ -56,7 +56,7 @@ def point_form(boxes):
     """ Convert prior_boxes to (xmin, ymin, xmax, ymax)
     representation for comparison to point form ground truth data.
     Args:
-        boxes: (tensor) center-size default boxes from priorbox layers.
+        boxes: (tensor) center-size default boxes from priorbox layers(c_x,c_y,w,h).
     Return:
         boxes: (tensor) Converted xmin, ymin, xmax, ymax form of boxes.
     """

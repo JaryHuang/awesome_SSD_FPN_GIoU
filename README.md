@@ -79,7 +79,7 @@ python tools/train.py
   * For training, default NVIDIA GPU.
   * You can set the parameters in the train.py (see 'tools/train.py` for options) 
   * In the config,you can set the work_dir to save your training weight.(see 'configs/config.py`) 
-
+  * if you want to selected the classficaiton and Regression Loss, you can to change the train_config. Now, we provide the classficaiton {FocalLoss,CrossEntropy},Regression {SmoothL1,Giou}.(see 'configs/config.py`) 
 
 ### Training yourself dataset
 - if you want to trainning yourself dataset, there are some steps:

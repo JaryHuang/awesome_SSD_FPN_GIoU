@@ -27,20 +27,17 @@ class FocalLoss(nn.Module):
         if alpha is None:
             self.alpha = torch.ones(class_num, 1)
         else:
-            if isinstance(alpha, Variable):
-                self.alpha = alpha
-            else:
-                self.alpha = alpha
+            self.alpha = alpha
         self.gamma = gamma
         self.class_num = class_num
         self.size_average = size_average
-        print(self.gamma)
+        print(self.gamma,self.alpha)
     def forward(self, inputs, targets):
         N = inputs.size(0)
         C = inputs.size(1)
         P = F.softmax(inputs,dim= 1)
         class_mask = inputs.data.new(N, C).fill_(0)
-        class_mask = Variable(class_mask)
+        #class_mask = Variable(class_mask)
         ids = targets.view(-1, 1)
         class_mask.scatter_(1, ids.data, 1.)
 
@@ -128,7 +125,7 @@ class MultiBoxLoss(nn.Module):
 
     def __init__(self, cfg, overlap_thresh, prior_for_matching,
                  bkg_label, neg_mining, neg_pos, neg_overlap, encode_target,
-                 use_gpu=True,loss_name = 'SmoothL1'):
+                 use_gpu=True,loss_c = "CrossEntropy", loss_r = 'SmoothL1'):
         super(MultiBoxLoss, self).__init__()
         self.use_gpu = use_gpu
 
@@ -143,11 +140,13 @@ class MultiBoxLoss(nn.Module):
         self.variance = cfg['variance']
         self.focalloss = FocalLoss(self.num_classes,gamma=2,size_average = False)
         self.gious = GiouLoss(pred_mode = 'Center',size_sum=True,variances=self.variance)
-        self.loss = loss_name
-        if self.loss != 'SmoothL1' or self.loss !='Giou':
-            assert Exception("THe loss is Error, loss name must be SmoothL1 or Giou")
-                
-        elif self.loss == 'Giou':
+        self.loss_c = loss_c
+        self.loss_r = loss_r
+        if self.loss_r != 'SmoothL1' or self.loss_r !='Giou':
+            assert Exception("THe loss_r is Error, loss name must be SmoothL1 or Giou")
+        elif self.loss_c != 'CrossEntropy' or self.loss_c !='FocalLoss':
+            assert Exception("THe loss_c is Error, loss name must be CrossEntropy or FocalLoss")
+        elif self.loss_r == 'Giou':
             match_gious(self.threshold, truths, defaults, self.variance, labels,
                 loc_t, conf_t, idx)
 
@@ -178,10 +177,10 @@ class MultiBoxLoss(nn.Module):
             truths = targets[idx][:, :-1].data
             labels = targets[idx][:, -1].data
             defaults = priors.data
-            if self.loss == 'SmoothL1':
+            if self.loss_r == 'SmoothL1':
                 match(self.threshold, truths, defaults, self.variance, labels,
                     loc_t, conf_t, idx)
-            elif self.loss == 'Giou':
+            elif self.loss_r == 'Giou':
                 match_gious(self.threshold, truths, defaults, self.variance, labels,
                     loc_t, conf_t, idx)
 
@@ -201,36 +200,38 @@ class MultiBoxLoss(nn.Module):
         loc_p = loc_data[pos_idx].view(-1, 4)
         loc_t = loc_t[pos_idx].view(-1, 4)
 
-        if self.loss == 'SmoothL1':
+        if self.loss_r == 'SmoothL1':
             loss_l = F.smooth_l1_loss(loc_p, loc_t, reduction='sum')
-        elif self.loss == 'Giou':
+        elif self.loss_r == 'Giou':
             giou_priors = priors.data.unsqueeze(0).expand_as(loc_data)
             loss_l = self.gious(loc_p,loc_t,giou_priors[pos_idx].view(-1, 4))
         # Compute max conf across batch for hard negative mining
-        batch_conf = conf_data.view(-1, self.num_classes)
-        loss_c = log_sum_exp(batch_conf) - batch_conf.gather(1, conf_t.view(-1, 1))
+        if self.loss_c == "CrossEntropy":
+        
+            batch_conf = conf_data.view(-1, self.num_classes)
+            loss_c = log_sum_exp(batch_conf) - batch_conf.gather(1, conf_t.view(-1, 1))
 
-        # Hard Negative Mining
-        loss_c = loss_c.view(num, -1)
-        loss_c[pos] = 0 
-        _, loss_idx = loss_c.sort(1, descending=True)
-        _, idx_rank = loss_idx.sort(1)
-        num_pos = pos.long().sum(1, keepdim=True)
-        num_neg = torch.clamp(self.negpos_ratio*num_pos, max=pos.size(1)-1)
-        neg = idx_rank < num_neg.expand_as(idx_rank)
+            # Hard Negative Mining
+            loss_c = loss_c.view(num, -1)
+            loss_c[pos] = 0 
+            _, loss_idx = loss_c.sort(1, descending=True)
+            _, idx_rank = loss_idx.sort(1)
+            num_pos = pos.long().sum(1, keepdim=True)
+            num_neg = torch.clamp(self.negpos_ratio*num_pos, max=pos.size(1)-1)
+            neg = idx_rank < num_neg.expand_as(idx_rank)
 
-        # Confidence Loss Including Positive and Negative Examples
-        pos_idx = pos.unsqueeze(2).expand_as(conf_data)
-        neg_idx = neg.unsqueeze(2).expand_as(conf_data)
-        conf_p = conf_data[(pos_idx+neg_idx).gt(0)].view(-1, self.num_classes)
-        targets_weighted = conf_t[(pos+neg).gt(0)]
-        loss_c = F.cross_entropy(conf_p, targets_weighted, reduction='sum')
-
+            # Confidence Loss Including Positive and Negative Examples
+            pos_idx = pos.unsqueeze(2).expand_as(conf_data)
+            neg_idx = neg.unsqueeze(2).expand_as(conf_data)
+            conf_p = conf_data[(pos_idx+neg_idx).gt(0)].view(-1, self.num_classes)
+            targets_weighted = conf_t[(pos+neg).gt(0)]
+            loss_c = F.cross_entropy(conf_p, targets_weighted, reduction='sum')
+        
         # Sum of losses: L(x,c,l,g) = (Lconf(x, c) + αLloc(x,l,g)) / N
-        '''
-        batch_conf = conf_data.view(-1, self.num_classes)
-        loss_c = self.focalloss(batch_conf,conf_t)
-        '''
+        elif self.loss_c == "FocalLoss":
+            batch_conf = conf_data.view(-1, self.num_classes)
+            loss_c = self.focalloss(batch_conf,conf_t)
+        
         N = num_pos.data.sum().double()
         loss_l = loss_l.double()
         loss_c = loss_c.double()

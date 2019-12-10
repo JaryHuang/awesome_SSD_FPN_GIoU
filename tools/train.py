@@ -3,7 +3,7 @@ import sys
 sys.path.append(os.getcwd())
 from model import build_ssd
 from data import *
-from config import crack,voc
+from config import crack,voc,train_config
 from utils import MultiBoxLoss
 
 
@@ -19,11 +19,6 @@ import argparse
 from tqdm import tqdm
 
 
-def str2bool(v):
-    return v.lower() in ("yes", "true", "t", "1")
-'''
-from eval import test_net
-'''
 parser = argparse.ArgumentParser(description=
     'Single Shot MultiBox Detector Training With Pytorch')
 train_set = parser.add_mutually_exclusive_group()
@@ -33,17 +28,15 @@ parser.add_argument('--basenet', default=None,#'vgg16_reducedfc.pth',
                     help='Pretrained base model')
 parser.add_argument('--batch_size', default=32, type=int,
                     help='Batch size for training')
-parser.add_argument('--max_epoch', default=232, type=int,
-                    help='Max Epoch for training')
 parser.add_argument('--resume', default=None, type=str,
                     help='Checkpoint state_dict file to resume training from')
 parser.add_argument('--start_iter', default=0, type=int,
                     help='Resume training at this iter')
 parser.add_argument('--num_workers', default=4, type=int,
                     help='Number of workers used in dataloading')
-parser.add_argument('--cuda', default=True, type=str2bool,
+parser.add_argument('--cuda', default=True, type=str,
                     help='Use CUDA to train model')
-parser.add_argument('--lr', '--learning-rate', default=1e-3, type=float,
+parser.add_argument('--lr', '--learning-rate', default=5e-4, type=float,
                     help='initial learning rate')
 parser.add_argument('--momentum', default=0.9, type=float,
                     help='Momentum value for optim')
@@ -90,11 +83,11 @@ def train():
         cfg = coco
         dataset = COCODetection(root=COCO_ROOT,
                                 transform=SSDAugmentation(cfg['min_dim'],
-                                                          MEANS),filename = 'train.txt')
+                                mean = cfg['mean'],std = cfg['std']))
     elif args.dataset == 'VOC':
         if not os.path.exists(VOC_ROOT):
             parser.error('Must specify dataset_root if specifying dataset')
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         cfg = voc
         dataset = VOCDetection(root=VOC_ROOT,
                                transform = SSDAugmentation(cfg['min_dim'],
@@ -134,12 +127,12 @@ def train():
                           weight_decay=args.weight_decay)
     
 
-    #loss:SmoothL1\Giou
+    #Loss:SmoothL1\Giou
     criterion = MultiBoxLoss(cfg = cfg,overlap_thresh = 0.5, 
                             prior_for_matching = True,bkg_label = 0, 
                             neg_mining = True, neg_pos = 3,neg_overlap = 0.5,
-                            encode_target = False, use_gpu = args.cuda,loss_name = 'Giou')
-    
+                            encode_target = False, use_gpu = args.cuda,loss_c = train_config['loss_c'],loss_r = train_config['loss_r'])
+    #Vis
     if args.visdom:
         import visdom
         viz = visdom.Visdom(env=cfg['work_name'])
@@ -154,12 +147,13 @@ def train():
     
     
     epoch_size = len(dataset) // args.batch_size
-    print('Training SSD on:', dataset.name,epoch_size)
+    max_epoch = cfg["max_iter"]//epoch_size
+    print('Training SSD on:', dataset.name,epoch_size,max_epoch)
     iteration = args.start_iter
     step_index = 0
     loc_loss = 0
     conf_loss = 0
-    for epoch in range(args.max_epoch):
+    for epoch in range(max_epoch):
         for ii, batch_iterator in tqdm(enumerate(data_loader)):
             iteration += 1
             
@@ -197,7 +191,7 @@ def train():
                     update_vis_plot(viz,iteration, loss_l.item(), loss_c.item(),
                                 iter_plot, epoch_plot, 'append')
 
-        if epoch % 10 == 0 and epoch >60:#epoch>1000 and epoch % 50 == 0:
+        if epoch % 10 == 0 and epoch > 60:#epoch>1000 and epoch % 50 == 0:
             print('Saving state, iter:', iteration)
             save_folder = args.work_dir+cfg['work_name']
             if not os.path.exists(save_folder):
