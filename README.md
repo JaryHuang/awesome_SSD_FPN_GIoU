@@ -131,7 +131,7 @@ if you want to visual the box, you can add the command --visbox True(default Fal
 
 #### Download a pre-trained network
 - Currently, we provide the following PyTorch models:
-    * SSD300 trained on VOC0712 (newest PyTorch SSD+FPN+Gious weights) [Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/1Z4oYk0ni_Tocj8xJzglzFA) , passward:32wv
+    * SSD300 trained on VOC0712 (newest PyTorch SSD+FPN+Gious weights) [Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/1j82bEblOjUl3PLaTHneexQ) , passward:zrx0
 
 
 ## Authors
