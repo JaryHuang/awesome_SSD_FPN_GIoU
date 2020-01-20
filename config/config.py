@@ -36,7 +36,7 @@ voc= {
     'variance': [0.1, 0.2],
     'clip': True,
     'name': 'VOC',
-    'work_name':"SSD300_VOC_FPN_Focalloss",
+    'work_name':"SSD300_VOC_FPN_Giou",
 }
 
 
