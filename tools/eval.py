@@ -406,14 +406,15 @@ if __name__ == '__main__':
     net = build_ssd('test', size = 300, cfg = voc)            # initialize SSD
     net.load_state_dict(torch.load(args.trained_model))
     
-    print('Finished loading model!')
-    # load data
-    dataset = VOCDetection(args.voc_root, [('2007', 'test')],
-                           BaseTransform(300, voc['mean'],voc['std']))
     if args.cuda:
         net = net.cuda()
         torch.backends.cudnn.benchmark = True
     net.eval()
+    print('Finished loading model!')
+    # load data
+    dataset = VOCDetection(args.voc_root, [('2007', 'test')],
+                           BaseTransform(300, voc['mean'],voc['std']))
+   
         
     # evaluation
     devkit_path = VOC_ROOT +'VOC2007/'

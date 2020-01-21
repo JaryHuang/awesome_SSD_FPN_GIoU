@@ -74,8 +74,6 @@ class Backbone(nn.Module):
             if i+1 in self.feature_map:
               
                 outs.append(x)
-        #for i in range(len(outs)):
-            #print(outs[i].shape[1])
         if len(outs) == 1:
             return outs[0]
         else:

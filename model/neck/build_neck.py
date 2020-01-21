@@ -3,9 +3,20 @@ import torch.nn.functional as F
 import sys
 from ..utils import ConvModule
 
+'''
+argc:
+    in_channels: some channel of backbone feature map
+    out_channels: the output feature map 
+    out_map: selected some output feature map 
+    start_level: selected which feature map is first to deal
+    end_level: selected the final feature map 
 
+return
+
+'''
 class Neck(nn.Module):
-    def __init__(self, in_channels = [64,256,512,1024,2048],out_channels = 256,out_map=None,start_level = 0,end_level = None):
+    def __init__(self, in_channels = [64,256,512,1024,2048],
+    out_channels = 256,out_map=None,start_level = 0,end_level = None):
         super(Neck,self).__init__()
         self.in_channels = in_channels
         if isinstance(out_channels,int):
@@ -58,7 +69,7 @@ class Neck(nn.Module):
     def forward(self,inputs):
         assert len(inputs) == len(self.in_channels)
 
-        # build laterals
+        # build lateral
         laterals = [
             lateral_conv(inputs[i + self.start_level])
             for i, lateral_conv in enumerate(self.lateral_convs)
@@ -81,7 +92,7 @@ class Neck(nn.Module):
         for i in range(len(outs)):
             print(outs[i].shape)
         '''
-        return tuple(outs)
+        return outs
 
 
 

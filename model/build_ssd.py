@@ -14,10 +14,11 @@ import torch.nn as nn
 import torch
 from utils import PriorBox,Detect
 import torch.nn.functional as F
+from torchsummary import summary
 
 class SSD(nn.Module):
     """Single Shot Multibox Architecture
-    The network is composed of a base VGG network followed by the
+    The network is composed of a base ResNet followed by the
     added multibox conv layers.  Each multibox layer branches into
         1) conv2d for class conf scores
         2) conv2d for localization predictions
@@ -28,9 +29,10 @@ class SSD(nn.Module):
     Args:
         phase: (string) Can be "test" or "train"
         size: input image size
-        base: VGG16 layers for input, size of either 300 or 500
+        Backbone: some network like ResNet layers for input, size of 300
         extras: extra layers that feed to multibox loc and conf layers
         head: "multibox head" consists of loc and conf conv layers
+        cfg: some config information to initialition the priorbox
     """
 
     def __init__(self, phase, size, Backbone, Neck, Head, cfg):
@@ -38,7 +40,7 @@ class SSD(nn.Module):
         self.phase = phase
         self.cfg = cfg
         self.priorbox = PriorBox(self.cfg)
-        self.priors = self.priorbox.forward()
+        self.priors = self.priorbox.forward()  #some priors[-1,4]
         self.size = size
         # SSD network
         self.backbone = Backbone
@@ -46,14 +48,14 @@ class SSD(nn.Module):
         self.head = Head
         self.num_classes = cfg['num_classes']
         self.softmax = nn.Softmax(dim=-1)
-        self.detect = Detect(self.num_classes , 0, 200, 0.01, 0.45,variance = cfg['variance'])
+        self.detect = Detect(self.num_classes , 0, 200, 0.01, 0.45, variance = cfg['variance'],nms_method=cfg['nms_method'])
 
     def forward(self, x, phase):
         """Applies network layers and ops on input image(s) x.
 
         Args:
             x: input image or batch of images. Shape: [batch,3,300,300].
-
+            phase: now is not used
         Return:
             Depending on phase:
             test:
@@ -113,7 +115,10 @@ def build_ssd(phase, size=300, cfg=None):
               "currently only SSD300 (size=300) is supported!")
         return
     print(phase)
+    #the layer [6,7,8,9,10,11] is the feature map of 38 19 10 5 3 1
     base = Backbone(cfg['model'],[6,7,8,9,10,11])
+    #base.cuda()
+    #summary(base, (3,300, 300))
     #neck=None
     neck = Neck(in_channels = cfg['backbone_out'], out_channels = cfg['neck_out'])
     head = SSDHead(num_classes = cfg['num_classes'],in_channels = cfg['neck_out'],aspect_ratios = cfg['aspect_ratios'])

@@ -4,7 +4,7 @@ sys.path.append(os.getcwd())
 from model import build_ssd
 from data import *
 from config import crack,voc,train_config
-from utils import MultiBoxLoss
+from utils import MultiBoxLoss,setup_seed
 
 
 import time
@@ -18,6 +18,7 @@ import torch.utils.data as data
 import argparse
 from tqdm import tqdm
 
+setup_seed(19950221)
 
 parser = argparse.ArgumentParser(description=
     'Single Shot MultiBox Detector Training With Pytorch')
@@ -32,7 +33,7 @@ parser.add_argument('--resume', default=None, type=str,
                     help='Checkpoint state_dict file to resume training from')
 parser.add_argument('--start_iter', default=0, type=int,
                     help='Resume training at this iter')
-parser.add_argument('--num_workers', default=4, type=int,
+parser.add_argument('--num_workers', default=8, type=int,
                     help='Number of workers used in dataloading')
 parser.add_argument('--cuda', default=True, type=str,
                     help='Use CUDA to train model')

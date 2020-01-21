@@ -14,7 +14,9 @@ class PriorBox(object):
         # number of priors for feature map location (either 4 or 6)
         self.num_priors = len(cfg['aspect_ratios'])
         self.variance = cfg['variance'] or [0.1]
+        #the feature map size
         self.feature_maps = cfg['feature_maps']
+        
         self.min_sizes = cfg['min_sizes']
         self.max_sizes = cfg['max_sizes']
         self.steps = cfg['steps']
@@ -26,6 +28,9 @@ class PriorBox(object):
                 raise ValueError('Variances must be greater than 0')
 
     def forward(self):
+        """Compute priorbox [c_x,c_y,w,h],
+        all the result is normalizaiton.
+        """
         mean = []
         # create the prior box[c_x,c_y,w,h]
         for k, f in enumerate(self.feature_maps):
@@ -54,5 +59,4 @@ class PriorBox(object):
         output = torch.Tensor(mean).view(-1, 4)
         if self.clip:
             output.clamp_(max=1, min=0)
-        #print(output.shape)
-        return output
+        return output 

@@ -1,6 +1,6 @@
 import torch
 from torch.autograd import Function
-from ..box import decode, nms
+from ..box import decode, nms, diounms
 
 
 class Detect(Function):
@@ -9,7 +9,7 @@ class Detect(Function):
     scores and threshold to a top_k number of output predictions for both
     confidence score and locations.
     """
-    def __init__(self, num_classes, bkg_label, top_k, conf_thresh, nms_thresh,variance):
+    def __init__(self, num_classes, bkg_label, top_k, conf_thresh, nms_thresh,variance,nms_method = "nms"):
         self.num_classes = num_classes
         self.background_label = bkg_label
         self.top_k = top_k
@@ -19,7 +19,7 @@ class Detect(Function):
             raise ValueError('nms_threshold must be non negative.')
         self.conf_thresh = conf_thresh
         self.variance = variance
-
+        self.nms_method = nms_method
     def forward(self, loc_data, conf_data, prior_data):
         """
         Args:
@@ -50,7 +50,12 @@ class Detect(Function):
                 l_mask = c_mask.unsqueeze(1).expand_as(decoded_boxes)
                 boxes = decoded_boxes[l_mask].view(-1, 4)
                 # idx of highest scoring and non-overlapping boxes per class
-                ids, count = nms(boxes, scores, self.nms_thresh, self.top_k)
+                if self.nms_method == "nms":
+                    ids, count = nms(boxes, scores, self.nms_thresh, self.top_k)
+                elif self.nms_method == "diounms":
+                    ids, count = diounms(boxes, scores, self.nms_thresh, self.top_k, 1.0)
+                else:
+                    raise Exception("NMS method ERROR")
                 output[i, cl, :count] = \
                     torch.cat((scores[ids[:count]].unsqueeze(1),
                                boxes[ids[:count]]), 1)
