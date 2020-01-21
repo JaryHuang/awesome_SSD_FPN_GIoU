@@ -79,7 +79,7 @@ python tools/train.py
   * For training, default NVIDIA GPU.
   * You can set the parameters in the train.py (see 'tools/train.py` for options) 
   * In the config,you can set the work_dir to save your training weight.(see 'configs/config.py`) 
-  * if you want to selected the classficaiton and Regression Loss, you can to change the train_config. Now, we provide the classficaiton {FocalLoss,CrossEntropy},Regression {SmoothL1,Giou}.(see 'configs/config.py`) 
+  * if you want to selected the classficaiton and Regression Loss, you can to change the train_config. Now, we provide the classficaiton {FocalLoss,CrossEntropy},Regression {SmoothL1,GIoU,DIoU,CIoU}.(see 'configs/config.py`) 
 
 ### Training yourself dataset
 - if you want to trainning yourself dataset, there are some steps:
@@ -116,23 +116,16 @@ if you want to visual the box, you can add the command --visbox True(default Fal
 #### VOC2007 Test mAP
 - Backbone is the ResNet50:
 
-| Test |mAP(iou=0.5)|mAP(iou=0.6)|mAP(iou=0.75)|
+| Test |AP50(iou=0.5)|AP75(iou=0.75)|FPS|
 |:-:|:-:|:-:|:-:|
-| SSD | 75.49% | 70.87% | 53.44 % |
-| SSD+Gious | 76.09% | 71.01% | 54.70 % |
-| SSD+FPN | 78.99% | 73.18% | 55.19 % |
-| SSD+FPN+Gious | 78.96% | 73.35% | 55.83 % |
-
-![result](https://github.com/JaryHuang/SSD_FPN_GIoU/blob/master/work_dir/result.png)
-
-#### FPS
-- SSD+FPN+Gious:
-**GTX 1080ti:** ~35 FPS
+| SmoothL1 | 78.83% | 53.99% | 35.1 |
+| GIoU | 78.27% | 55.17% | 33.4 |
+| DIoU | 78.96% | 55.19% | 33.76 |
+| CIoU | 78.65% | 55.37% | 31.3 |
 
 #### Download a pre-trained network
 - Currently, we provide the following PyTorch models:
-    * SSD300 trained on VOC0712 (newest PyTorch SSD+FPN+Gious weights) [Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/1j82bEblOjUl3PLaTHneexQ) , passward:zrx0
-
+    * SSD300 trained on VOC0712 (newest PyTorch weights) [Baidu DRIVE-raw.tar.gz](https://pan.baidu.com/s/158xpnjm5yPO2W6Pgs3WUAA) , passward:cuyf
 
 ## Authors
 * [**JavierHuang**](https://github.com/JaryHuang)
